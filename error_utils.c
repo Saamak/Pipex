@@ -16,7 +16,7 @@ void	argc_error(int argcs)
 {
 	if (argcs != 5)
 	{
-		ft_putstr_fd("too few arguments", 2);
+		ft_putstr_fd("Error", 2);
 		exit(EXIT_FAILURE);
 	}
 }
@@ -26,7 +26,7 @@ void	error_argv(char **argvs)
 	if (argvs[1][0] == '\0' || argvs[2][0] == '\0' ||
 		argvs[3][0] == '\0' || argvs[4][0] == '\0')
 	{
-		ft_putstr_fd("empty argument detected", 2);
+		ft_putstr_fd("Error", 2);
 		exit(EXIT_FAILURE);
 	}
 	return ;
@@ -41,7 +41,7 @@ void	error_infile(t_data *data)
 
 void	error_cmd_access(t_data *data, char **commands_path)
 {
-	ft_printf("Error accessing command: %s\n", strerror(errno));
+	ft_printf("Error : accessing command: %s\n", strerror(errno));
 	free_all(data);
 	free_cmds_path(commands_path);
 	exit(EXIT_FAILURE);

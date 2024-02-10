@@ -29,7 +29,7 @@ int	pipe_creation(char *infile, char *outfile, t_data *data, char **envp)
 	close(fdout);
 	if (pipe(pfd) == -1)
 	{
-		perror("pipe failed");
+		ft_printf("pipe failed");
 		return (1);
 	}
 	pid = fork();
@@ -48,7 +48,7 @@ int	pipe_creation_two(int pid, int pfd[], t_data *data, char **envp)
 		close(pfd[0]);
 		if (execve(data->cmd2, data->cmd_args2, envp) == -1)
 		{
-			perror("wc failed");
+			ft_printf("wc failed");
 			return (1);
 		}
 	}
@@ -59,7 +59,7 @@ int	pipe_creation_two(int pid, int pfd[], t_data *data, char **envp)
 		close(pfd[1]);
 		if (execve(data->cmd1, data->cmd_args, envp) == -1)
 		{
-			perror("ls failed");
+			ft_printf("ls failed");
 			return (1);
 		}
 	}
@@ -68,7 +68,7 @@ int	pipe_creation_two(int pid, int pfd[], t_data *data, char **envp)
 
 void	pipe_error(t_data *data)
 {
-	perror("fork failed");
+	ft_printf("fork failed");
 	free_all(data);
 	exit(EXIT_FAILURE);
 }

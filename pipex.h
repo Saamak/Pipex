@@ -16,7 +16,6 @@
 # define RED "\x1b[32m"
 # define RESET "\x1b[0m"
 
-# include <stdio.h>
 # include <unistd.h>
 # include <memory.h>
 # include <fcntl.h>
