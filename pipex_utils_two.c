@@ -6,7 +6,7 @@
 /*   By: ppitzini <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 15:40:00 by ppitzini          #+#    #+#             */
-/*   Updated: 2024/01/24 19:24:45 by ppitzini         ###   ########.fr       */
+/*   Updated: 2024/02/11 22:18:53 by ppitzini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,8 @@ t_data	*init_data(void)
 	data->cmd_args = NULL;
 	data->cmd_args2 = NULL;
 	data->bowl = 0;
+	data->cmd1_wrong = 0;
+	data->cmd1_wrong = 0;
 	return (data);
 }
 

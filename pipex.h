@@ -6,7 +6,7 @@
 /*   By: ppitzini <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 16:53:46 by ppitzini          #+#    #+#             */
-/*   Updated: 2024/01/25 16:53:14 by ppitzini         ###   ########.fr       */
+/*   Updated: 2024/02/11 22:18:39 by ppitzini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ typedef struct s_data
 	char	*cmd1;
 	char	*cmd2;
 	int		bowl;
+	int		cmd1_wrong;
+	int		cmd2_wrong;
 }	t_data;
 
 char	*cmd_get(t_data *data, char *cmd, char **commands_path);

@@ -6,7 +6,7 @@
 /*   By: ppitzini <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 19:25:03 by ppitzini          #+#    #+#             */
-/*   Updated: 2024/01/24 19:26:43 by ppitzini         ###   ########.fr       */
+/*   Updated: 2024/02/11 22:20:27 by ppitzini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ char	*cmd_get(t_data *data, char *cmd, char **commands_path)
 		cmd_slashed = ft_strjoin("/", data->cmd_args2[0]);
 		tested_path = test_cmd(data, cmd_slashed, commands_path);
 	}
-	free(cmd_slashed);
 	return (tested_path);
 }
 
@@ -50,7 +49,10 @@ char	*test_cmd(t_data *data, char *cmd_slashed, char **commands_path)
 		i++;
 	}
 	free(cmd_slashed);
-	error_cmd_access(data, commands_path);
+	if (data->bowl == 0)
+		data->cmd1_wrong = 1;
+	else
+		data->cmd2_wrong = 1;
 	return (NULL);
 }
 
