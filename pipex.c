@@ -6,7 +6,7 @@
 /*   By: ppitzini <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 16:59:13 by ppitzini          #+#    #+#             */
-/*   Updated: 2024/02/11 23:31:58 by ppitzini         ###   ########.fr       */
+/*   Updated: 2024/02/12 00:18:52 by ppitzini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,10 @@ int	main(int argc, char **argv, char **envp)
 
 	argc_error(argc);
 	error_argv(argv);
+	if (!(access(argv[1], F_OK) == 0))
+	{
+		exit(EXIT_FAILURE);
+	}
 	data = init_data();
 	commands_path = ft_split(cmd_find_path(envp), ':');
 	data->cmd1 = cmd_get(data, argv[2], commands_path);
